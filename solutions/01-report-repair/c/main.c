@@ -9,7 +9,7 @@ int main() {
 		return EXIT_FAILURE;
 	}
 	
-	int* report = calloc(200, sizeof(int));
+	int* report = (int*)calloc(200, sizeof(int));
 	
 	char* input_line = NULL;
 	size_t s = 0;
@@ -38,6 +38,6 @@ int main() {
 	
 	free(report);
 	free(input_line);
-	free(fp);
+	fclose(fp);
 	return EXIT_SUCCESS;
 }
