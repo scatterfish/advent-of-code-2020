@@ -1,4 +1,5 @@
 #!/bin/sh
 
-gcc main.c -o out/main
-exec out/main
+if gcc main.c -o out; then
+	exec ./out
+fi
