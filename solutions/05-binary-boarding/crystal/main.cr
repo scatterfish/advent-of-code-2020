@@ -1,5 +1,5 @@
 
-passes = File.read_lines("input.txt", chomp: true)
+passes = File.read_lines("input.txt")
 
 seat_ids = Array(Int32).new
 

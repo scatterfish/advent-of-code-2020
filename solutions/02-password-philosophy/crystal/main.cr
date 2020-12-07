@@ -1,5 +1,5 @@
 
-policies = File.read_lines("input.txt", chomp: true)
+policies = File.read_lines("input.txt")
 
 count_valid = 0
 pos_valid = 0

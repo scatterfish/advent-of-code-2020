@@ -1,5 +1,5 @@
 
-terrain = File.read_lines("input.txt", chomp: true).map(&.chars)
+terrain = File.read_lines("input.txt").map(&.chars)
 
 slopes = [
 	{x: 3, y: 1},
@@ -22,5 +22,5 @@ slopes.each do |slope|
 	tree_counts << trees
 end
 
-puts "Part 1 answer: #{tree_counts[0]}"
+puts "Part 1 answer: #{tree_counts.first}"
 puts "Part 2 answer: #{tree_counts.product}"
