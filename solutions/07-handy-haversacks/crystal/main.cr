@@ -6,16 +6,14 @@ BAG_TABLE = Hash(String, Hash(String, Int32)).new
 bag_rules.each do |rule|
 	bag, contents = rule.gsub(/( bag)s?/, "").split(" contain ")
 	BAG_TABLE[bag] = contents.split(", ").map { |c|
-		unless c.ends_with?("no other")
-			{c[2..], c[0].to_i}
-		end
+		{c[2..], c[0].to_i} unless c == "no other"
 	}.compact.to_h
 end
 
 def can_contain(target)
 	bags = Set(String).new
 	BAG_TABLE.each do |bag, contents|
-		if contents.keys.includes?(target)
+		if contents[target]?
 			bags << bag
 			bags += can_contain(bag)
 		end
