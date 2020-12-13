@@ -40,6 +40,7 @@ def get_day(prompt):
 				return 0
 		except KeyboardInterrupt:
 			print("\nKeyboard interrupt received. Exiting...")
+			sys.exit(0)
 		except ValueError:
 			print("Please enter a valid integer.")
 		except:
